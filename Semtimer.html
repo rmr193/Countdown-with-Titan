@@ -1,0 +1,150 @@
+
+
+<html>
+<head>
+<style>
+body{
+    text-align: center;
+    background: url(sea.jpg);
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+h1{
+  color: Yellow;
+  font-weight: 100;
+  font-size: 40px;
+  margin: 40px 0px 20px;
+}
+h1 span{
+    color:Red;
+    
+}
+
+h3 span{
+    color:Red;
+}
+
+.sub{
+
+     width: 250px;
+     position: absolute;
+     right:25%;
+     top: 20%;
+     animation: sub 4s linear infinite;
+
+}
+
+@keyframes sub{
+
+0%{
+   top: 0;
+   opacity: 0;
+
+}
+
+100%{
+
+    top:100%;
+    opacity: 1;
+
+}
+
+}
+
+ #clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+#clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+}
+#clockdiv div > span{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+}
+smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+h4{
+  position:absolute;
+  bottom:30%;
+  left:45%;
+}
+
+h5{
+    position:absolute;
+    right:5%;
+    bottom:0%;
+}
+</style>
+</head>
+<body>
+<h1><b>Welcome to <span>Semester</span> exam</b> </h1>
+<p><b>It will begin soon.</b></p>
+<div id="clockdiv">
+  <div>
+    <span class="days" id="day"></span>
+    <div class="smalltext">Days</div>
+  </div>
+  <div>
+    <span class="hours" id="hour"></span>
+    <div class="smalltext">Hours</div>
+  </div>
+  <div>
+    <span class="minutes" id="minute"></span>
+    <div class="smalltext">Minutes</div>
+  </div>
+  <div>
+    <span class="seconds" id="second"></span>
+    <div class="smalltext">Seconds</div>
+  </div>
+</div>
+</div>
+<img src="sub.png" class="sub">
+</div>
+  
+<p id="demo"></p>
+  
+<script>
+  
+var deadline = new Date("Jul 17, 2023 10:00:00").getTime();
+  
+var x = setInterval(function() {
+  
+var now = new Date().getTime();
+var t = deadline - now;
+var days = Math.floor(t / (1000 * 60 * 60 * 24));
+var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((t % (1000 * 60)) / 1000);
+document.getElementById("day").innerHTML =days ;
+document.getElementById("hour").innerHTML =hours;
+document.getElementById("minute").innerHTML = minutes; 
+document.getElementById("second").innerHTML =seconds; 
+if (t < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "TIME UP";
+        document.getElementById("day").innerHTML ='0';
+        document.getElementById("hour").innerHTML ='0';
+        document.getElementById("minute").innerHTML ='0' ; 
+        document.getElementById("second").innerHTML = '0'; }
+}, 1000);
+</script>
+<h3><b>My result is on <span>Titan</span> and it's sinking<b></h3>
+<div><h4>Need help?<br>Click <a href="https://drive.google.com/drive/u/0/mobile/folders/1zJxJfQNAO1BxXHQ01tebm7-G3P7ER7i9?usp=drive_link" target="_blank">here</a> for notes.</h4></div>
+<h5>copyright: rmr193</h5>
+
+</body>
+</html>
